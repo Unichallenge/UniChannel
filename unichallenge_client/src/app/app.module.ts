@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { PostsComponent } from './posts/posts.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LimitPipe } from './limit.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    PostsComponent
+    PostsComponent,
+    LimitPipe
   ],
   imports: [
     BrowserModule,

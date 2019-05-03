@@ -1,72 +1,42 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="wrapper">
-    <div class="main">
-      <div class="section section-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto text-center title">
-              <!-- <h2>A place for storytelling</h2>
-              <h3 class="title-uppercase">
-                <small>Written by designers for designers</small>
-              </h3> -->
-              <br><br>
-            </div>
-          </div>
-          <div class="article">
-            <div class="row">
-              <div class="col-md-8 ml-auto mr-auto">
-                <div class="card card-blog card-plain text-center">
-                  <a>
-                    <h3 class="card-title">My Review of Pitchfork’s ‘Indie 500’ Album Review</h3>
-                  </a>
-                  <div class="card-description">
-                    <p>In the first sentence of Pitchfork’s review of my collaborative project with 9th Wonder, INDIE 500, a reviewer who is associated with music review site rhapsody.com writes about how I criticize and then distance myself from “celebrity straw men” with the line “celebrities be making money...</p>
-                  </div>
-                  <div class="card-category">
-                    <span class="badge badge-primary main-tag">Featured</span>
-                  </div>
-                  <br><br>
-                  <div class="card-image">
-                    <a href="#pablo">
-                      <img class="img img-raised" src="../assets/img/sections/bruno-abatti.jpg">
-                    </a>
-                  </div>
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <br/>
-          <br/>
-          <div class="article">
-            <div class="row">
-              <div class="col-md-8 ml-auto mr-auto">
-                <div class="card card-blog card-plain text-center">
-                  <a>
-                    <h3 class="card-title">My Review of Pitchfork’s ‘Indie 500’ Album Review</h3>
-                  </a>
-                  <div class="card-description">
-                    <p>In the first sentence of Pitchfork’s review of my collaborative project with 9th Wonder, INDIE 500, a reviewer who is associated with music review site rhapsody.com writes about how I criticize and then distance myself from “celebrity straw men” with the line “celebrities be making money...</p>
-                  </div>
-                  <div class="card-category">
-                    <span class="badge badge-primary main-tag">Featured</span>
-                    
-                  </div>
-                  <br><br>
-                  <div class="card-image">
-                    <a href="#pablo">
-                      <img class="img img-raised" src="../assets/img/sections/bruno-abatti.jpg">
-                    </a>
-                  </div>
-                  <div class="card-body">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- Navbar -->
+<div class="bg-light">
+  <nav class="navbar navbar-expand-lg fixed-top nav-down navbar-transparent" color-on-scroll="500">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="" rel="tooltip" title="UniChallenge" data-placement="bottom" target="_self"><img src="assets/img/UniChallenge_logo.png" width="275"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange" style="margin-top: 20px;">
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item" >
+            <a href="#description" class="nav-link" style="color:#464551; font-family: 'Comfortaa', cursive;">
+              Περιγραφη
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#team" class="nav-link" style="color:#464551; font-family: 'Comfortaa', cursive;">
+              Ομαδα
+            </a>
+          </li>
+          <li>
+              <a href="https://goo.gl/forms/LehCLvDBWg2qH3GJ3" class="btn btn-primary btn-round " target="_blank">Δηλωσε συμμετοχη</a>
+          </li> -->
+        </ul>
       </div>
     </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <div style="margin-top:100px;">
+    <div class="container">
+      <br><br>
+      <app-search></app-search>
+      <br><br>
+      <app-posts [posts]="posts"></app-posts>
+    </div>
   </div>
+</div>
