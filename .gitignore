@@ -2,3 +2,23 @@
 node_modules
 *.iml
 site_config.py
+
+#Django
+
+# Django stuff:
+.idea/
+unichallenge/db.sqlite3
+unichallenge/.idea/
+
+# Environments
+unichallenge/venv/
+
+#For b4s
+unichallenge/djuc/__pycache__/
+unichallenge/djuc/*.py[cod]
+unichallenge/djuc/migrations/__pycache__/
+
+#For project_site
+unichallenge/unichallenge/__pycache__/
+unichallenge/unichallenge/*.py[cod]
+unichallenge/unichallenge/site_config.py
