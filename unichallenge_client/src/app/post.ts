@@ -1,4 +1,4 @@
-export class Tag
+import { Tag } from './tag';
 
 export class Post {
   id:number;
