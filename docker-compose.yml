@@ -5,6 +5,7 @@ services:
     volumes:
       - ./database.py:/server/unichallenge/site_config.py
       - /opt/images:/server/images
+    command: uwsgi --http 0.0.0.0:8000 --module unichallenge.wsgi
   nginx:
     build: .
     ports:
