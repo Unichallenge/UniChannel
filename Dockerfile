@@ -13,4 +13,4 @@ WORKDIR /server
 COPY unichallenge/requirements.txt /server
 RUN pip install -r requirements.txt
 COPY unichallenge /server
-COPY --from=0 /angular/dist /server/static
+COPY --from=0 /angular/dist/uknow /server/static
