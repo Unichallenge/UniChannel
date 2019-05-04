@@ -4,7 +4,7 @@ services:
     build: unichallenge_server
     volumes:
       - ./database.py:/server/unichallenge/site_config.py
-      - /opt/media:/server/unichallenge/media
+      - /opt/media:/server/media
     command: uwsgi --http 0.0.0.0:8000 --module unichallenge.wsgi
   nginx:
     build: .
@@ -12,7 +12,7 @@ services:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./opt/media:/files/media
+      - /opt/media:/files/media:ro
   database:
     image: mysql:5.7
     restart: always
