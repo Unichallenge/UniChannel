@@ -4,5 +4,7 @@ djangorestframework==3.9.3
 Markdown==3.1
 mysqlclient==1.4.2.post1
 Pillow==6.0.0
+psycopg2==2.8.2
 pytz==2019.1
 sqlparse==0.3.0
+uWSGI==2.0.18
