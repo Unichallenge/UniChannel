@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import { POSTS } from './mock-posts';
 
 @Component({
     selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent implements OnInit {
     @ViewChild('contentStart') contentStart: ElementRef;
 
     collapse: boolean;
+    posts = POSTS;
+    searchTerm = '';
 
     ngOnInit(): void {
 
@@ -19,6 +22,4 @@ export class AppComponent implements OnInit {
     scrollHandler(event) {
         this.collapse = this.contentStart.nativeElement.getBoundingClientRect().top < 90;
     }
-
-
 }

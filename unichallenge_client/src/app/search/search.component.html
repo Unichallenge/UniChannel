@@ -1,8 +1,10 @@
 <div class="d-flex justify-content-center py-2">
-    <div class="d-flex align-items-center py-2 container">
-        <input class="form-control search flex-grow-1" type="text" placeholder="Search by #hashtag!">
+    <form class="d-flex align-items-center py-2 container" (submit)="search.emit();">
+        <input class="form-control search flex-grow-1" type="text" placeholder="Search by #hashtag!"
+               [ngModel]="term" (ngModelChange)="termChange.emit($event)" name="searchTerm">
         <button type="button" class="btn btn-circle btn-lg ml-3"
-                style="background-color:#3cc194;margin-left: -15px;margin-top: -5px;"><i class="fa fa-search"></i>
+                style="background-color:#3cc194;margin-left: -15px;margin-top: -5px;">
+            <i class="fa fa-search"></i>
         </button>
-    </div>
+    </form>
 </div>
