@@ -7,5 +7,5 @@ RUN npm i && npm run prod
 
 FROM nginx
 
-COPY --from=0 /angular/dist/uknow /angular
-COPY unichallenge_server/static /static
+COPY --from=0 /angular/dist/uknow /files/angular
+COPY unichallenge_server/static /files/static
