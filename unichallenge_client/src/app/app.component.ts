@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { POSTS } from './mock-posts';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'uknow';
-  test1 = 'Το πιο νεανικό πολυσυνέδριο επιχειρηματικότητας, επιστρέφει για 3η συνεχόμενη χρονιά 17&18 Μαΐου στην OTE Academy ακόμα πιο καινοτόμο και σε περιμένει.';
+
+  posts = POSTS;
+
 }

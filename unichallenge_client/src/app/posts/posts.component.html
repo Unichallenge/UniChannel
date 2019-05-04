@@ -1,42 +1,16 @@
 <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <div *ngFor="let post of posts" class="col-lg-6 col-md-6 col-sm-12">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">ThinkBiz Academy 2019</h5>
-        <p class="card-text">Το πιο νεανικό πολυσυνέδριο επιχειρηματικότητας, επιστρέφει για 3η συνεχόμενη χρονιά 17&18 Μαΐου στην OTE Academy ακόμα πιο καινοτόμο και σε περιμένει.</p>
-        <a><h6 style="color:#3cc194;">#thinkbiz</h6></a>
+        <a href="{{post.link}}" class="card-title"><h5>{{post.title}}</h5></a>
+        <p class="card-text">{{post.description}}</p>
+        <div class="row">
+          <div *ngFor="let tag of post.tags">
+            <a href="#"><h6>#{{tag.name}}</h6></a>&nbsp;
+          </div>
+        </div>
       </div>
-      <img class="card-img-bottom" src="../assets/img/1.jpg" alt="Card image cap">
-    </div>
-  </div>
-  <div class="col-lg-6 col-md-6 col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a><h6 style="color:#3cc194;">#thinkbiz</h6></a>
-      </div>
-      <img class="card-img-top" src="../assets/img/5.png" alt="Card image cap">
-    </div>
-  </div>
-  <div class="col-lg-6 col-md-6 col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a><h6 style="color:#3cc194;">#thinkbiz</h6></a>
-      </div>
-      <img class="card-img-top" src="../assets/img/7.png" alt="Card image cap">
-    </div>
-  </div>
-  <div class="col-lg-6 col-md-6 col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">ThinkBiz Academy 2019</h5>
-        <p class="card-text">Το πιο νεανικό πολυσυνέδριο επιχειρηματικότητας, επιστρέφει για 3η συνεχόμενη χρονιά 17&18 Μαΐου στην OTE Academy ακόμα πιο καινοτόμο και σε περιμένει.</p>
-        <a><h6 style="color:#3cc194;">#thinkbiz</h6></a>
-      </div>
-      <img class="card-img-bottom" src="../assets/img/1.jpg" alt="Card image cap">
+      <img class="card-img-bottom" src="../assets/img/{{post.id}}.png" alt="Card image cap">
     </div>
   </div>
 </div>

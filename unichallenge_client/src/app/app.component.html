@@ -1,42 +1,41 @@
 <!-- Navbar -->
 <div class="bg-light">
-  <nav class="navbar navbar-expand-lg fixed-top nav-down navbar-transparent" color-on-scroll="500">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="" rel="tooltip" title="UniChallenge" data-placement="bottom" target="_self"><img src="assets/img/UniChallenge_logo.png" width="275"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange" style="margin-top: 20px;">
-        <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item" >
-            <a href="#description" class="nav-link" style="color:#464551; font-family: 'Comfortaa', cursive;">
-              Περιγραφη
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#team" class="nav-link" style="color:#464551; font-family: 'Comfortaa', cursive;">
-              Ομαδα
-            </a>
-          </li>
-          <li>
-              <a href="https://goo.gl/forms/LehCLvDBWg2qH3GJ3" class="btn btn-primary btn-round " target="_blank">Δηλωσε συμμετοχη</a>
-          </li> -->
-        </ul>
-      </div>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="" rel="tooltip" title="UniChallenge" data-placement="bottom" target="_self"><img src="assets/img/UniChallenge_logo.png" width="275"></a>
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link"
+             routerLink="/dashboard"
+             href="#">Dashboard
+            <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link"
+             routerLink="/books"
+             href="#">Books</a>
+        </li> -->
+      </ul>
+    </div>
     </div>
   </nav>
   <!-- End Navbar -->
 
-  <div style="margin-top:100px;">
     <div class="container">
       <br><br>
       <app-search></app-search>
       <br><br>
       <app-posts [posts]="posts"></app-posts>
     </div>
-  </div>
 </div>

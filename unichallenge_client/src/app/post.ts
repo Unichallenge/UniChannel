@@ -6,6 +6,6 @@ export class Post {
   description:string;
   link:string;
   image:string;
-  date:Date
+  date:string
   tags:Tag[]
 }

@@ -13,3 +13,12 @@
   -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
   transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
 }
+
+a.card-title, a.card-title:visited, a.card-title:active {
+  color:#373543;
+}
+
+a.card-title:hover {
+  color:#3cc194;
+  text-decoration: underline;
+}
