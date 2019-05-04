@@ -1,41 +1,11 @@
-<!-- Navbar -->
-<div class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<app-navbar [collapse]="collapse"></app-navbar>
+<div class="content">
     <div class="container">
-    <button class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand" href="" rel="tooltip" title="UniChallenge" data-placement="bottom" target="_self"><img src="assets/img/UniChallenge_logo.png" width="275"></a>
-      <ul class="navbar-nav mr-auto">
-        <!-- <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link"
-             routerLink="/dashboard"
-             href="#">Dashboard
-            <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link"
-             routerLink="/books"
-             href="#">Books</a>
-        </li> -->
-      </ul>
-    </div>
-    </div>
-  </nav>
-  <!-- End Navbar -->
-
-    <div class="container">
-      <br><br>
-      <app-search></app-search>
-      <br><br>
-      <app-posts [posts]="posts"></app-posts>
+        <div class="py-4">
+            <app-search></app-search>
+        </div>
+        <div #contentStart>
+            <app-posts [posts]="posts"></app-posts>
+        </div>
     </div>
 </div>
