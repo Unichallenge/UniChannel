@@ -7,9 +7,22 @@
 }
 
 .navbar.is-scrolled .search, .navbar.is-scrolled .brand-text {
+    animation-duration: 0.2s;
     display: none;
 }
 
 .navbar.is-scrolled .search {
     display: inline;
+    animation-duration: 0.2s;
+    animation-name: appears;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appears {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
