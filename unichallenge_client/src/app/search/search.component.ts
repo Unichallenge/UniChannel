@@ -23,10 +23,10 @@ export class SearchComponent implements OnInit {
         this.search.subscribe(() => this.tags = [])
     }
 
-    autocomplete() {
+    autocomplete(term: string) {
         if (this.hidePredictions) return;
-        if (this.term) {
-            this.service.searchTags(this.term).subscribe(tags => this.tags = tags)
+        if (term) {
+            this.service.searchTags(term).subscribe(tags => this.tags = tags)
         } else {
             this.tags = [];
         }
