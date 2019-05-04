@@ -13,4 +13,5 @@ WORKDIR /server
 COPY unichallenge/requirements.txt /server
 RUN pip install -r requirements.txt
 COPY unichallenge /server
-COPY --from=0 /angular/dist/uknow /server/static
+COPY --from=0 /angular/dist/uknow /server/unichallenge/static
+RUN python manage.py collectstatic
