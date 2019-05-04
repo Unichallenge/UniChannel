@@ -1,5 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import { POSTS } from './mock-posts';
+import {PostService} from "./post.service";
+import {Post} from "./post";
 
 @Component({
     selector: 'app-root',
@@ -8,18 +9,30 @@ import { POSTS } from './mock-posts';
 })
 export class AppComponent implements OnInit {
 
-    @ViewChild('contentStart') contentStart: ElementRef;
-
-    collapse: boolean;
-    posts = POSTS;
-    searchTerm = '';
-
-    ngOnInit(): void {
+    constructor(private service: PostService) {
 
     }
 
+    @ViewChild('contentStart') contentStart: ElementRef;
+
+    posts: Post[];
+    collapse: boolean;
+    searchTerm = '';
+
+    ngOnInit(): void {
+        this.search()
+    }
+
     @HostListener('window:scroll', ['$event'])
-    scrollHandler(event) {
+    scrollHandler() {
         this.collapse = this.contentStart.nativeElement.getBoundingClientRect().top < 90;
+    }
+
+    search() {
+        if (this.searchTerm) {
+            this.service.getPostsByTagName(this.searchTerm).subscribe(posts => this.posts = posts)
+        } else {
+            this.service.getPosts().subscribe(posts => this.posts = posts)
+        }
     }
 }

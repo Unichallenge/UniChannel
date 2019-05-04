@@ -1,10 +1,10 @@
 <app-navbar [collapse]="collapse">
-    <app-search [(term)]="searchTerm"></app-search>
+    <app-search [(term)]="searchTerm" (search)="search()"></app-search>
 </app-navbar>
 <div class="content">
     <div class="container">
         <div class="py-4">
-            <app-search [(term)]="searchTerm"></app-search>
+            <app-search [(term)]="searchTerm" (search)="search()"></app-search>
         </div>
         <div #contentStart>
             <app-posts (tagClicked)="searchTerm = $event" [posts]="posts"></app-posts>
