@@ -28,7 +28,7 @@ class PostList(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset( self ):
-        tag = self.kwargs['tag']
-        tag_ids = Tags.objects.filter(tags=tag).values('id')
+        tags = self.kwargs['tag'].split(',')
+        tag_ids = Tags.objects.filter(tags__in=tags).values('id')
         post_ids = PostTags.objects.filter(tags_id__in=tag_ids).values('post_id')
         return Post.objects.filter(id__in=post_ids)
