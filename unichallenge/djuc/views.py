@@ -33,7 +33,7 @@ class PostTagsList(generics.ListAPIView):
         return Post.objects.filter(id__in=post_ids)
 
 
-class PostList(generics.ListAPIView):
+class PostTitleList(generics.ListAPIView):
     serializer_class = PostSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
@@ -41,3 +41,11 @@ class PostList(generics.ListAPIView):
         posts = self.kwargs['post'].split(',')
         post_ids = Post.objects.filter(title__in=posts).values('id')
         return Post.objects.filter(id__in=post_ids)
+
+
+class PostList(generics.ListAPIView):
+    serializer_class = PostSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def get_queryset( self ):
+        return Post.objects
