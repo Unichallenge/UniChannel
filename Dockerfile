@@ -1,15 +1,16 @@
 FROM node
 
+RUN mkdir /angular
 WORKDIR /angular
-COPY unichallenge_client /code/
+COPY unichallenge_client /angular
 RUN npm i && npm run prod
 
 FROM python:3
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /code
-WORKDIR /code
-COPY requirements.txt /code/
+RUN mkdir /server
+WORKDIR /server
+COPY unichallenge/requirements.txt /server
 RUN pip install -r requirements.txt
-COPY unichallenge /code/
-COPY --from=0 /code/dist /code/static/
+COPY unichallenge /server
+COPY --from=0 /angular/dist /server/static

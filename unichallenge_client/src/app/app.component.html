@@ -1,5 +1,5 @@
 <app-navbar [collapse]="collapse">
-    <app-search [(term)]="searchTerm" (search)="search()"></app-search>
+    <app-search [(term)]="searchTerm" (search)="search()" [hidePredictions]="true"></app-search>
 </app-navbar>
 <div class="content">
     <div class="container">
@@ -7,7 +7,7 @@
             <app-search [(term)]="searchTerm" (search)="search()"></app-search>
         </div>
         <div #contentStart>
-            <app-posts (tagClicked)="searchTerm = $event" [posts]="posts"></app-posts>
+            <app-posts (tagClicked)="searchTerm = $event; search()" [posts]="posts"></app-posts>
         </div>
     </div>
 </div>

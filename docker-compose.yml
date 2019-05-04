@@ -1,0 +1,17 @@
+version: "3"
+services:
+  server:
+    build: .
+    volumes:
+      - ./database.py:/server/unichallenge/site_config.py
+      - ./images:/server/images
+    command: python manage.py runserver localhost:8000
+    ports:
+      - 127.0.0.1:6666:8000
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: un!ch@ll3ng3
+    ports:
+      - 127.0.0.1:3306:3306

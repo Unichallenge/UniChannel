@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
     }
 
     search() {
+        console.log('DOULEPSEEEE');
         if (this.searchTerm) {
             this.service.getPostsByTagName(this.searchTerm).subscribe(posts => this.posts = posts)
         } else {
