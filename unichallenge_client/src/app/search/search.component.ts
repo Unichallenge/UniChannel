@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
 
     @Input() term: string;
     @Output() termChange: EventEmitter<string> = new EventEmitter();
+    @Output() search: EventEmitter<void> = new EventEmitter();
 
     ngOnInit() {
     }

@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Post} from '../post';
-import {Tag} from '../tag';
 
 @Component({
   selector: 'app-posts',
@@ -10,6 +9,7 @@ import {Tag} from '../tag';
 export class PostsComponent implements OnInit {
 
   @Input() posts: Post[];
+  @Output() tagClicked = new EventEmitter<string>();
 
   constructor() { }
 

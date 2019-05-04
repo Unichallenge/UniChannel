@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand fixed-top nav-down bg-light" [ngClass]="{'is-scrolled': collapse}">
+<nav class="navbar navbar-expand fixed-top nav-down" [ngClass]="{'is-scrolled': collapse}">
     <div class="container">
         <a class="navbar-brand mr-0" href="/" rel="tooltip" target="_self">
             <img height="48" src="assets/img/UniChallenge_logo.png" alt="UKnow">
@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="search">
-                    <app-search></app-search>
+                    <ng-content></ng-content>
                 </li>
             </ul>
         </div>

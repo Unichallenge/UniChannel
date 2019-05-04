@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
     collapse: boolean;
     posts = POSTS;
+    searchTerm = '';
 
     ngOnInit(): void {
 

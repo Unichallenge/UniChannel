@@ -1,11 +1,13 @@
-<app-navbar [collapse]="collapse"></app-navbar>
+<app-navbar [collapse]="collapse">
+    <app-search [(term)]="searchTerm"></app-search>
+</app-navbar>
 <div class="content">
     <div class="container">
         <div class="py-4">
-            <app-search></app-search>
+            <app-search [(term)]="searchTerm"></app-search>
         </div>
         <div #contentStart>
-            <app-posts [posts]="posts"></app-posts>
+            <app-posts (tagClicked)="searchTerm = $event" [posts]="posts"></app-posts>
         </div>
     </div>
 </div>
