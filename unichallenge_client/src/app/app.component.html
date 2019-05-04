@@ -9,8 +9,10 @@
         <div #contentStart>
             <app-posts (tagClicked)="searchTerm = $event; search()" [posts]="posts"></app-posts>
         </div>
-        <footer class="text-center text-muted small my-2">
-            Δημιουργήθηκε από την ομάδα του
+        <footer class="text-center text-muted small my-3">
+            Δημιουργήθηκε με
+            <i class="fas fa-heart text-danger"></i>
+            από την ομάδα του
             <a href="https://unichallenge.gr">UniChallenge</a>.
             Αν επιθυμείτε να δημοσιεύσετε, πατήστε
             <a href="https://forms.gle/HptDjnfknYsXuzvE9" target="_blank">εδώ</a>.
