@@ -19,6 +19,6 @@ from django.urls import include, path
 from django.contrib import admin
 
 urlpatterns = [
-    path('djuc/', include('djuc.urls')),
+    path('api/', include('djuc.urls')),
     url(r'^admin/', admin.site.urls),
 ]
