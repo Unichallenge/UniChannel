@@ -66,7 +66,6 @@ export class PostService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

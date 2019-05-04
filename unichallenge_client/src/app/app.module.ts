@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {LimitPipe} from './limit.pipe';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     imports: [
         BrowserModule,
         NgbModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
