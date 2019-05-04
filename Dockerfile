@@ -3,7 +3,8 @@ FROM node
 RUN mkdir /angular
 WORKDIR /angular
 COPY unichallenge_client /angular
-RUN npm i && npm run prod
+RUN npm install
+RUN npm run prod
 
 FROM nginx
 
