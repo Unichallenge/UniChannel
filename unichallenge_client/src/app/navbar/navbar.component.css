@@ -1,5 +1,6 @@
 .navbar {
     height: 90px;
+    box-shadow: 0 2px 2px #c4c4c4;
 }
 
 .navbar .search {
