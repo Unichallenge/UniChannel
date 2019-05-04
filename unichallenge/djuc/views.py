@@ -21,8 +21,7 @@ class TagsList(generics.ListCreateAPIView):
         return queryset
 
 
-# returns a specific favourite home of a specific user if exists
-class PostList(generics.ListAPIView):
+class PostTagsList(generics.ListAPIView):
     serializer_class = TagSerializer
     serializer_class = PostSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
@@ -31,4 +30,14 @@ class PostList(generics.ListAPIView):
         tags = self.kwargs['tag'].split(',')
         tag_ids = Tags.objects.filter(tags__in=tags).values('id')
         post_ids = PostTags.objects.filter(tags_id__in=tag_ids).values('post_id')
+        return Post.objects.filter(id__in=post_ids)
+
+
+class PostList(generics.ListAPIView):
+    serializer_class = PostSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def get_queryset( self ):
+        posts = self.kwargs['post'].split(',')
+        post_ids = Post.objects.filter(title__in=posts).values('id')
         return Post.objects.filter(id__in=post_ids)
