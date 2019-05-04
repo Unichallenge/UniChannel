@@ -1,0 +1,15 @@
+.navbar {
+    height: 90px;
+}
+
+.navbar .search {
+    display: none;
+}
+
+.navbar.is-scrolled .search, .navbar.is-scrolled .brand-text {
+    display: none;
+}
+
+.navbar.is-scrolled .search {
+    display: inline;
+}
