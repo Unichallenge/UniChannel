@@ -17,3 +17,13 @@ class Post(models.Model):
 class PostTags(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
+
+
+class PostManager(models.Manager):
+
+    def save(self, *args, **kwargs):
+        # Check how the current values differ from ._loaded_values. For example,
+        # prevent changing the creator_id of the model. (This example doesn't
+        # support cases where 'creator_id' is deferred).
+        print(self)
+        super().save(*args, **kwargs)

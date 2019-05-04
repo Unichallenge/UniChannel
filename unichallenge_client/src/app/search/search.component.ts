@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
     autocomplete() {
         if (this.hidePredictions) return;
-        if (this.term && this.term.length > 1) {
+        if (this.term) {
             this.service.searchTags(this.term).subscribe(tags => this.tags = tags)
         } else {
             this.tags = [];
