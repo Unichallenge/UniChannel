@@ -5,7 +5,8 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'title', 'description', 'image', 'link', 'date')
+        fields = ('id', 'title', 'description', 'image', 'link', 'date', 'tags')
+        depth = 1
 
 class TagSerializer(serializers.ModelSerializer):
 
