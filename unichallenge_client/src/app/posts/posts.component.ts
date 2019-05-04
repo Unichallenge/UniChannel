@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Post} from '../post';
 
+import { PostService } from '../post.service';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -11,7 +13,7 @@ export class PostsComponent implements OnInit {
   @Input() posts: Post[];
   @Output() tagClicked = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private PostService: PostService) { }
 
   ngOnInit() {
   }
