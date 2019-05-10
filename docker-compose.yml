@@ -5,13 +5,14 @@ services:
     volumes:
       - ./database.py:/server/unichallenge/site_config.py
       - /opt/media:/server/media
-    command: uwsgi --http 0.0.0.0:8000 --module unichallenge.wsgi
+    command: uwsgi --socket 0.0.0.0:8000 --protocol uwsgi --module unichallenge.wsgi
   nginx:
     build: .
     ports:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./uwsgi.conf:/etc/nginx/uwsgi.conf
       - /opt/media:/files/media:ro
   database:
     image: mysql:5.7
