@@ -2,24 +2,23 @@
 .vscode
 node_modules
 *.iml
-site_config.py
 
-# Python
-venv
+# Python configs
+site_config.py
+/database.py
+/venv
 
 # Django stuff:
-unichallenge_server/db.sqlite3
-unichallenge_server/.idea/
+/unichallenge_server/db.sqlite3
 
 # Environments
-unichallenge_server/venv/
+/unichallenge_server/venv/
 
-#For b4s
-unichallenge_server/djuc/__pycache__/
-unichallenge_server/djuc/*.py[cod]
-unichallenge_server/djuc/migrations/__pycache__/
+# For b4s
+/unichallenge_server/djuc/__pycache__/
+/unichallenge_server/djuc/*.py[cod]
+/unichallenge_server/djuc/migrations/__pycache__/
 
-#For project_site
-unichallenge_server/unichallenge/__pycache__/
-unichallenge_server/unichallenge/*.py[cod]
-unichallenge_server/unichallenge/site_config.py
+# For project_site
+/unichallenge_server/unichallenge/__pycache__/
+/unichallenge_server/unichallenge/*.py[cod]
