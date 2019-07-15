@@ -42,4 +42,4 @@ class PostList(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
-        return Post.objects.order_by('date')
+        return Post.objects.order_by('-date')

@@ -2,6 +2,7 @@ version: "3"
 services:
   server:
     build: unichallenge_server
+    user: "1050:1050"
     volumes:
       - ./database.py:/server/unichallenge/site_config.py
       - /opt/media:/server/media
@@ -19,11 +20,6 @@ services:
     restart: always
     volumes:
       - /opt/database:/var/lib/mysql
-    environment:
-      MYSQL_HOST: 'database'
-      MYSQL_DATABASE: 'djuc'
-      MYSQL_USER: 'unichallenge'
-      MYSQL_PASSWORD: 'un!ch@ll3ng3'
-      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    env_file: .env
     ports:
       - 127.0.0.1:3306:3306
