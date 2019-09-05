@@ -1,14 +1,12 @@
-FROM node
+FROM python
 
-RUN mkdir /angular
-WORKDIR /angular
-COPY unichallenge_client/package.json /angular
-COPY unichallenge_client/package-lock.json /angular
-RUN npm install
-COPY unichallenge_client /angular
-RUN npm run prod
+WORKDIR /app
+COPY server/requirements.txt .
 
-FROM nginx
+RUN pip install -r requirements.txt
+RUN pip install uwsgi
 
-COPY --from=0 /angular/dist/uknow /files/angular
-COPY unichallenge_server/static /files/static
+COPY server .
+COPY server/unichallenge/site_config.production.py unichallenge/site_config.py
+
+CMD uwsgi --socket 0.0.0.0:8000 --protocol uwsgi --module unichallenge.wsgi
