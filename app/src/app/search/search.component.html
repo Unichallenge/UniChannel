@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center py-2">
+    <div class="container">
+        <form class="d-flex align-items-center py-2" (submit)="search.emit();">
+            <input class="form-control search flex-grow-1" type="text" placeholder="Search by #hashtag!"
+                   [ngModel]="term" (ngModelChange)="termChange.emit($event); autocomplete($event)" name="searchTerm">
+            <button type="submit" class="btn btn-circle btn-lg ml-3"
+                    style="background-color:#3cc194;margin-left: -15px;margin-top: -5px;">
+                <i class="fas fa-fw fa-search"></i>
+            </button>
+        </form>
+        <div *ngIf="!hidePredictions">
+            <a *ngFor="let tag of tags" class="mr-1" tabindex="0"
+               (click)="term = '#' + tag.tag_name; termChange.emit(term); search.emit()">
+                #{{tag.tag_name}}
+            </a>
+        </div>
+    </div>
+
+</div>

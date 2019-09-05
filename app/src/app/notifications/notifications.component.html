@@ -1,0 +1,10 @@
+<div *ngIf="supported" class="notifications container py-2">
+  <button (click)="setup()" class="btn btn-circle btn-lg ml-3"
+    style="background-color:#a83232;margin-left: -15px;margin-top: -5px;">
+      <i *ngIf="subscribed" class="fas fa-fw fa-bell"></i>
+      <i *ngIf="!subscribed" class="fas fa-fw fa-bell-slash"></i>
+  </button>
+  <a *ngIf="prompt" class="prompt" (click)="dismiss()">
+    Λάβετε ειδοποιήσεις για τα νέα του πανεπιστημίου!
+  </a>
+</div>

@@ -1,0 +1,19 @@
+.notifications {
+    position: relative;
+}
+
+.prompt {
+    position: absolute;
+    background: white;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    padding: 9px 16px;
+    top: 0;
+    left: -12rem;
+
+    font-size: 0.9rem;
+    text-align: right;
+
+    width: 13rem;
+}
