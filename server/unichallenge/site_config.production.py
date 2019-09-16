@@ -19,7 +19,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'uknow',
         'USER': 'root',
-        'PASSWORD': os.environ['MARIA_PASS'],
+        'PASSWORD': os.environ['MARIADB_PASSWORD'],
         'HOST': 'mariadb'
     }
 }

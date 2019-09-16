@@ -3,8 +3,8 @@ services:
   mariadb:
     image: mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: ${MARIA_PASS}
-      MYSQL_DATABASE: uknow
+    - MYSQL_ROOT_PASSWORD=${MARIADB_PASSWORD}
+    - MYSQL_DATABASE=unichannel
     ports:
     - 127.0.0.1:3306:3306
     volumes:
@@ -13,7 +13,7 @@ services:
     build: .
     user: "${UID}:${GID}"
     environment:
-    - MARIA_PASS
+    - MARIADB_PASSWORD
     - SENTRY_DSN
     volumes:
     - ./unichannel/firebase.json:/firebase.json
@@ -25,8 +25,8 @@ services:
     build: .
     user: "${UID}:${GID}"
     environment:
-    - MARIA_PASS
-    - SENTRY_DSN
+    - MARIADB_PASSWORD
+    - SENTRY_DSN=${TASK_SENTRY_DNS}
     volumes:
     - ./unichannel/firebase.json:/firebase.json
     - ./unichannel/media:/media
