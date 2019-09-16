@@ -6,23 +6,18 @@ def deploy(c):
 
 @task
 def deploy_remote(c):
-    c.run('git fetch; git reset --hard origin/$(git symbolic-ref --short HEAD)')
+    # Make sure we are at the correct branch
+    c.run('git fetch; git reset --hard origin/master')
 
-    print('--- Building static assets ---')
+    # Build static
     c.run('rm -rf app/static')
     c.run('cp -r server/static app/static')
 
-    print('--- Building new containers ---')
+    # All the Docker stuff
     c.run('PATH=$PATH docker-compose build')
-
-    print('--- Stopping old instances ---')
     c.run('PATH=$PATH docker-compose down --remove-orphans')
-
-    print('--- Running pending migrations ---')
     c.run('PATH=$PATH docker-compose up -d mariadb')
     c.run('PATH=$PATH docker-compose run uwsgi python manage.py migrate')
-
-    print('--- Starting new instances ---')
     c.run('PATH=$PATH docker-compose up -d')
 
     print('=== UniChannel was deployed successfully! ===')

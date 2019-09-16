@@ -36,7 +36,7 @@ After all this, you can simply run these commands (in seperate terminals):
 
 ```bash
 cd server; source venv/bin/activate; python manage.py runserver
-cd app; yarn run serve
+cd app; npm run start
 ```
 
 And **voila!** The app is now running at [http://localhost:4200](http://localhost:4200)!
