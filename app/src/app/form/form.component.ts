@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormComponent implements OnInit {
 
-  data = {};
+  data = {full_name: '', email_address: '', content: ''};
   @Output() close: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private http: HttpClient) { }

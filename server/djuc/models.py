@@ -35,9 +35,9 @@ class PostSource(models.Model):
         return self.name
 
 class PostSubmission(models.Model):
-    full_name = models.CharField(max_length=2000)
-    email_address = models.CharField(max_length=2000)
-    content = models.TextField()
+    full_name = models.CharField(max_length=2000, blank=False)
+    email_address = models.CharField(max_length=2000, blank=False)
+    content = models.TextField(blank=False)
 
     def __str__(self):
         return self.content
