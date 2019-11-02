@@ -1,0 +1,17 @@
+<div class="form-modal-wrapper">
+  <div class="form-modal">
+    <div class="close" (click)="close.emit()">
+      <i class="fas fa-times"></i>
+    </div>
+    <form (submit)="submit(); false" ngNativeValidate>
+      <h2>Θέλω να δημοσιεύσω!</h2>
+      <input type="text" placeholder="Ονοματεπώνυμο" name="name" [(ngModel)]="data.full_name" required>
+      <input type="email" placeholder="Διεύθυνση email" name="email" [(ngModel)]="data.email_address" required>
+      <textarea placeholder="Τι θέλετε να δημοσιεύσετε;" rows="5" name="content" [(ngModel)]="data.content" required></textarea>
+      <div class="help">
+        <small>Η ομάδα του UniChannel θα επικοινωνήσει μαζί σας για να δημιουργήσει μια δημοσίευση με τη συνεργασία σας!</small>
+      </div>
+      <button type="submit">Αποστολή</button>
+    </form>
+  </div>
+</div>

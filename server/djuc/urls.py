@@ -1,12 +1,14 @@
 from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 from . import notifications
 from . import sources
 
 urlpatterns = [
+    re_path ( r'^posts/suggest$', views.PostSuggest.as_view() ),
     re_path ( r'^posts/(?P<post>[\w,\s_]+)/?$', views.PostTitleList.as_view () ),
     re_path ( r'^posts/?$', views.PostList.as_view () ),
     re_path ( r'^tag/search/(?P<term>[\w,_]+)/?$', views.TagsList.as_view()),

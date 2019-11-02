@@ -18,6 +18,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 import { environment } from '../environments/environment';
+import { FormComponent } from './form/form.component';
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -35,7 +36,8 @@ export class SentryErrorHandler implements ErrorHandler {
         PostsComponent,
         LimitPipe,
         NavbarComponent,
-        NotificationsComponent
+        NotificationsComponent,
+        FormComponent
     ],
     imports: [
         BrowserModule,

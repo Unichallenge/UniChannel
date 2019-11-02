@@ -31,7 +31,12 @@ class SubscriptionAdmin(admin.ModelAdmin):
     list_display = ['id']
     exclude = ['notification_token']
 
+class PostSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['content', 'full_name', 'email_address']
+    readonly_fields = ['full_name', 'email_address', 'content']
+
 admin.site.register(models.Post, PostAdmin)
 admin.site.register(models.Tag)
 admin.site.register(models.PostSource, PostSource)
 admin.site.register(models.Subscription, SubscriptionAdmin)
+admin.site.register(models.PostSubmission, PostSubmissionAdmin)

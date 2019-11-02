@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
     @ViewChild('contentStart') contentStart: ElementRef;
 
     posts: Post[];
-    collapse: boolean;
+    collapse: boolean = false;
+    form: boolean = true;
     searchTerm = '';
 
     ngOnInit(): void {

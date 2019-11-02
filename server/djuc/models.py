@@ -34,6 +34,14 @@ class PostSource(models.Model):
     def __str__(self):
         return self.name
 
+class PostSubmission(models.Model):
+    full_name = models.CharField(max_length=2000)
+    email_address = models.CharField(max_length=2000)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
 @receiver(post_init, sender=PostSource)
 def post_source_init(sender, instance, **kwargs):
     pass

@@ -2,6 +2,7 @@ from firebase_admin import messaging
 from background_task import background
 
 from .models import Post, Subscription
+from .views import CsrfExemptSessionAuthentication
 
 from rest_framework import status
 from rest_framework import permissions
@@ -44,11 +45,6 @@ def notify_about_post_async(post_id):
         except Exception as e:
             sentry_sdk.capture_exception(e)
             raise e
-
-class CsrfExemptSessionAuthentication(SessionAuthentication):
-
-    def enforce_csrf(self, request):
-        return 
 
 class NotificationView(APIView):
     permission_classes = (permissions.AllowAny,)
