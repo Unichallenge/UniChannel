@@ -48,7 +48,7 @@ And **voila!** The app is now running at [http://localhost:4200](http://localhos
 To deploy the app, run while in its directory:
 
 ```bash
-fab -h deployer@<host> deploy
+fab -H deployer@<host> deploy
 ```
 
 The script will take care of building the images, running any pending migrations and (re)starting the apps.

@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
     posts: Post[];
     collapse: boolean = false;
-    form: boolean = true;
+    form: boolean = false;
     searchTerm = '';
 
     ngOnInit(): void {
