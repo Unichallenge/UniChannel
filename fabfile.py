@@ -15,10 +15,8 @@ def deploy_remote(c):
 
     # All the Docker stuff
     c.run('PATH=$PATH docker-compose build')
-    c.run('PATH=$PATH docker-compose down --remove-orphans')
-    c.run('PATH=$PATH docker-compose up -d mariadb')
-    c.run('PATH=$PATH docker-compose run uwsgi python manage.py migrate')
     c.run('PATH=$PATH docker-compose up -d')
+    c.run('PATH=$PATH docker-compose run uwsgi python manage.py migrate')
 
     print('=== UniChannel was deployed successfully! ===')
 

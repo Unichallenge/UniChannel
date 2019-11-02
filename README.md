@@ -1,5 +1,21 @@
+![UniChannel Logo](logo.png)
 
-# UniChannel
+Welcome to the UniChannel project! Feel free to browse around the source code,
+snd remember, all Pull Request and Issues are welcome!
+
+## TODOs
+
+- [X] Create some TODOs.
+- [ ] Fix grid system for posts.
+- [ ] Fix all fields starting as red in submission form (use a FormGroup).
+- [ ] Allow optional image upload in submission form.
+- [ ] Output all posts as RSS.
+- [ ] Ensure no Referer leaks to post links.
+- [ ] Enable indexing. (@chrisagelou)
+
+Good to have:
+
+- [ ] Fix and reintroduce notification system.
 
 ## Development
 
