@@ -2,6 +2,7 @@ version: '3'
 services:
   mariadb:
     image: mariadb
+    restart: unless-stopped
     environment:
     - MYSQL_ROOT_PASSWORD=${MARIADB_PASSWORD}
     - MYSQL_DATABASE=unichannel
@@ -12,6 +13,7 @@ services:
   uwsgi:
     build: .
     user: "${UID}:${GID}"
+    restart: unless-stopped
     environment:
     - MARIADB_PASSWORD
     - SENTRY_DSN
@@ -23,6 +25,7 @@ services:
     - mariadb
   task_processor:
     build: .
+    restart: unless-stopped
     user: "${UID}:${GID}"
     environment:
     - MARIADB_PASSWORD
@@ -35,6 +38,7 @@ services:
     command: python manage.py process_tasks
   nginx:
     build: app/.
+    restart: unless-stopped
     ports:
     - 127.0.0.1:8000:80
     - 80:80
