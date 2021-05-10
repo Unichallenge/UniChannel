@@ -27,7 +27,7 @@
     "firebase": "^6.5.0",
     "font-awesome": "^4.7.0",
     "fstream": "^1.0.12",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.mergewith": "^4.6.2",
     "mixin-deep": "^2.0.1",
     "rxjs": "~6.3.3",
