@@ -39,7 +39,7 @@ mysqlclient==1.4.2.post1
 paramiko==2.6.0
 pbr==5.4.2
 Pillow==6.2.0
-protobuf==3.9.1
+protobuf==3.15.0
 psycopg2==2.8.2
 pyasn1==0.4.7
 pyasn1-modules==0.2.6
