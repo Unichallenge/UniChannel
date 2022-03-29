@@ -36,7 +36,7 @@ mccabe==0.6.1
 migrate==0.3.8
 msgpack==0.6.1
 mysqlclient==1.4.2.post1
-paramiko==2.6.0
+paramiko==2.10.1
 pbr==5.4.2
 Pillow==6.2.0
 protobuf==3.9.1
